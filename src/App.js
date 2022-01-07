@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Desarrollo by Sebastian Karp test
+          Desarrollo by Sebastian Karp
         </a>
       </header>
     </div>
