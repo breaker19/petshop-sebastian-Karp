@@ -1,10 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from'./components/NavBar'
 
 function App() {
   return (
     <div className="App">
+        <NavBar /> 
       <header className="App-header">
+       
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Pet shop y veterinaria
@@ -15,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Desarrollo by Sebastian Karp test
+          Desarrollo by Sebastian Karp
         </a>
       </header>
     </div>
