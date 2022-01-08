@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import gato from './gato.png';
 import './App.css';
 import NavBar from'./components/NavBar'
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,11 +14,11 @@ function App() {
         <NavBar /> 
       <header className="App-header">
        
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={gato} className="App-logo" alt="logo" />
         <p>
           Pet shop y veterinaria
         </p>
-        <Button variant="primary">Click Me!</Button>
+       
 
         <a
           className="App-link"
