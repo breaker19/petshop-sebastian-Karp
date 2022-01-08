@@ -6,31 +6,55 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
+import img from './logo.png';
 
 
 
 export const NavBar = () => {
   return (
-<Navbar bg="light" expand={-sm|-md|-lg|-xl}>
-  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Inicio</Nav.Link>
-      <Nav.Link href="#link">Mascotas</Nav.Link>
-      <NavDropdown title="Productos" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">gatos</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Perros</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Pajaros</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">otros</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>.
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Buscar</Button>
-    </Form>
-  </Navbar.Collapse>
+<Navbar bg="light" expand="lg">
+  <Container fluid>
+  <Navbar.Brand href="#home">
+      <img
+        src= {img}
+        width="100%"
+        height="100%"
+        className="d-inline-block align-top"
+        alt="Pet Shop"
+      />
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav
+        className="me-auto my-2 my-lg-0"
+        style={{ maxHeight: '100px' }}
+        navbarScroll
+      >
+        <Nav.Link href="#action1">Inicio</Nav.Link>
+        <Nav.Link href="#action2">Servicios</Nav.Link>
+        <NavDropdown title="Productos" id="navbarScrollingDropdown">
+          <NavDropdown.Item href="#action3">Gatos</NavDropdown.Item>
+          <NavDropdown.Item href="#action4">Perros</NavDropdown.Item>
+          <NavDropdown.Item href="#action5">Pajaros</NavDropdown.Item>
+          <NavDropdown.Item href="#action6">Otros</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action5">
+Solo estaba mirando
+          </NavDropdown.Item>
+        </NavDropdown>
+
+      </Nav>
+      <Form className="d-flex">
+        <FormControl
+          type="search"
+          placeholder="Buscar"
+          className="me-2"
+          aria-label="Search"
+        />
+        <Button variant="outline-success">Buscar</Button>
+      </Form>
+    </Navbar.Collapse>
+  </Container>
 </Navbar>
   )
 }

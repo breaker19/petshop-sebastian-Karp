@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from'./components/NavBar'
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+
+
+
 
 function App() {
   return (
@@ -12,6 +17,8 @@ function App() {
         <p>
           Pet shop y veterinaria
         </p>
+        <Button variant="primary">Click Me!</Button>
+
         <a
           className="App-link"
           href="https://tormenta.com.ar"
