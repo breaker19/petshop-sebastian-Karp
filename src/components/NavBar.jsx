@@ -44,7 +44,7 @@ Solo estaba mirando
         </NavDropdown>
 
       </Nav>
-      <div style={{ paddingRight: '20px' }}>
+      <div style={{ paddingRight: '20px' }}>  
       <CartWidget/>
       </div>
       <Form className="d-flex">
