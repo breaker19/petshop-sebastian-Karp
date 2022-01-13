@@ -7,7 +7,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import img from './logo.png';
-
+import CartWidget from '../components/CartWidget'
 
 
 export const NavBar = () => {
@@ -44,6 +44,9 @@ Solo estaba mirando
         </NavDropdown>
 
       </Nav>
+      <div style={{ paddingRight: '20px' }}>
+      <CartWidget/>
+      </div>
       <Form className="d-flex">
         <FormControl
           type="search"
@@ -53,6 +56,7 @@ Solo estaba mirando
         />
         <Button variant="outline-success">Buscar</Button>
       </Form>
+
     </Navbar.Collapse>
   </Container>
 </Navbar>
