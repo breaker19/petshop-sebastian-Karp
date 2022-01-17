@@ -8,7 +8,7 @@ import { render } from '@testing-library/react';
 
 
     const [itemsQty, setitemsQty] = useState(0);
-    const removeFromStock = (qty) => {
+    const limiteNegativo = (qty) => {
         if (qty >= 0) {
             setitemsQty(qty)
         }
@@ -22,7 +22,7 @@ return (
 
 <span>{itemsQty}</span>
 
-<Button style={{marginLeft: 20}} onClick={() =>removeFromStock(itemsQty - 1) } variant="danger"> - </Button>
+<Button style={{marginLeft: 20}} onClick={() =>limiteNegativo(itemsQty - 1) } variant="danger"> - </Button>
 
 </div>
 
