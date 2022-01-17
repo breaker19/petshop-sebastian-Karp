@@ -5,6 +5,7 @@ import NavBar from'./components/NavBar'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import CartWidget from './components/CartWidget';
+import Contador from './components/counter';
 
 
 
@@ -21,7 +22,7 @@ function App() {
           Pet shop y veterinaria
         </p>
         <CartWidget/>
-
+        <Contador/>
         <a
           className="App-link"
           href="https://tormenta.com.ar"
@@ -30,6 +31,7 @@ function App() {
         >
           Desarrollo by Sebastian Karp
         </a>
+        
       </header>
     </div>
   );

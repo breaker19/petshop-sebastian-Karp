@@ -1,4 +1,5 @@
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function CartWidget(){
@@ -10,3 +11,4 @@ function CartWidget(){
 
 }
 export default CartWidget;
+

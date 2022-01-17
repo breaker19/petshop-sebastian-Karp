@@ -1,0 +1,36 @@
+import {Button} from 'react-bootstrap';
+import React, {useState } from "react";
+import { render } from '@testing-library/react';
+
+
+
+ const Contador = () => {
+
+
+    const [itemsQty, setitemsQty] = useState(0);
+    const removeFromStock = (qty) => {
+        if (qty >= 0) {
+            setitemsQty(qty)
+        }
+    }
+return (
+    <div className="App">
+        <h4>Prueba de botones</h4>
+        <div style={{marginBottom: 10, paddingRight: 20}}>
+
+<Button style={{marginRight: 20}} onClick={() =>setitemsQty(itemsQty + 1) } variant="danger"> + </Button>
+
+<span>{itemsQty}</span>
+
+<Button style={{marginLeft: 20}} onClick={() =>removeFromStock(itemsQty - 1) } variant="danger"> - </Button>
+
+</div>
+
+</div>
+
+)
+
+
+}
+export default Contador
+
