@@ -21,7 +21,7 @@ const stock= 10;
     }
 return (
     <div className="App">
-        <h4>Prueba de botones</h4>
+        <h4>Cantidad de stock {stock - itemsQty}</h4>
         <div style={{marginBottom: 10, paddingRight: 20}}>
 
 <Button style={{marginRight: 20}} onClick={() =>limitestock(itemsQty + 1) } variant="danger"> + </Button>
