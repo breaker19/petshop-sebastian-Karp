@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import CartWidget from './components/CartWidget';
 import Contador from './components/counter';
+import Cantidades from './components/ItemListContainer'
 
 
 
@@ -22,7 +23,7 @@ function App() {
           Pet shop y veterinaria
         </p>
         <CartWidget/>
-        <Contador/>
+       <Cantidades/>
         <a
           className="App-link"
           href="https://tormenta.com.ar"
