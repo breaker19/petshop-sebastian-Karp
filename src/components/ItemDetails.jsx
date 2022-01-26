@@ -29,11 +29,11 @@ const productos = ({ product }) => {
                     
                 </div>
                 <div>
-                    ${price}
+                   Precio final: <span style={{color: "green", fontWeight: "900"}}>${price}</span>
                     
                 </div> 
                
-               Vendidos: {sold_quantity} Disponibles:{available_quantity}
+               <span style={{color: "black", fontWeight: "700"}}>Vendidos:</span> {sold_quantity} <span style={{color: "black", fontWeight: "700"}}>Disponibles:</span> {available_quantity}
                     
             </div> 
             </div>              
