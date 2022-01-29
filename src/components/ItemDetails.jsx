@@ -10,9 +10,27 @@ export const productoCategoria = (site, category) => {
 
 
 
-const productos = ({ product }) => {
+
+
+
+const Productos = ({ product }) => {
     const {title, thumbnail, price, permalink, sold_quantity, available_quantity} = product
- 
+
+    const [itemsQty, setitemsQty] = useState(0);
+    
+    const setRealStock = (qty) => {
+        if (qty <=  available_quantity) {
+            setitemsQty(qty)
+        } 
+    }
+
+    const removeFromStock = (qty) => {
+        if (qty >= 0) {
+            setitemsQty(qty)
+        }
+    }
+
+    
 
     return (
         <div  >
@@ -34,6 +52,16 @@ const productos = ({ product }) => {
                 </div> 
                
                <span style={{color: "black", fontWeight: "700"}}>Vendidos:</span> {sold_quantity} <span style={{color: "black", fontWeight: "700"}}>Disponibles:</span> {available_quantity}
+               
+<div>
+<Button style={{marginRight: 20}} onClick={() =>setRealStock(itemsQty + 1) } variant="danger"> + </Button>
+
+<span>{itemsQty}</span>
+
+<Button style={{marginLeft: 20}} onClick={() =>removeFromStock(itemsQty - 1) } variant="danger"> - </Button>
+
+</div>
+
                     
             </div> 
             </div>              
@@ -45,4 +73,4 @@ const productos = ({ product }) => {
         </div> 
       
     )}
-export default productos;
+export default Productos;
