@@ -14,15 +14,10 @@ export const NavBar = () => {
   return (
 <Navbar bg="light" expand="lg">
   <Container fluid>
-  <Navbar.Brand href="#home">
-      <img
-        src= {img}
-        width="100%"
-        height="100%"
-        className="d-inline-block align-top"
-        alt="Pet Shop"
-      />
-    </Navbar.Brand>
+
+ <Navbar.Brand href="/">
+      <img  src= {img}  width="100%" height="100%"className="d-inline-block align-top"
+        alt="Pet Shop"/></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -31,13 +26,12 @@ export const NavBar = () => {
         navbarScroll
       >
         <Nav.Link href="/">Inicio</Nav.Link>
-        <Nav.Link href="#servicios">Servicios</Nav.Link>
+        <Nav.Link href="/juguetes">Juguetes</Nav.Link>
         <Nav.Link href="/error">404</Nav.Link>
         <NavDropdown title="Productos" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="#gatos">Gatos</NavDropdown.Item>
-          <NavDropdown.Item href="#perros">Perros</NavDropdown.Item>
-          <NavDropdown.Item href="#pajaros">Pajaros</NavDropdown.Item>
-          <NavDropdown.Item href="#otros">Otros</NavDropdown.Item>
+          <NavDropdown.Item href="/Gatos">Gatos</NavDropdown.Item>
+          <NavDropdown.Item href="/Perros">Perros</NavDropdown.Item>
+
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
 Solo estaba mirando

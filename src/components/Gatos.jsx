@@ -5,23 +5,20 @@ import ItemListContainer from './itemdetailconteiner';
 
 
 
-const SelectCategory = () => {
+const CategoriaGatos = () => {
 
   const [products, setProducts] = useState([])
   
-  
+
   useEffect(() => {
- 
     let categoriaElegida = true
    
-    productoCategoria("MLA", "MLA1071").then(lista => {
+    productoCategoria("MLA", "MLA1081").then(lista => {
       if(categoriaElegida) {
         setProducts(lista.results)
       
       }
-      
     })
-   
     return () => categoriaElegida = false;
   }, [])
 
@@ -29,6 +26,4 @@ const SelectCategory = () => {
       <ItemListContainer products={products} />
   );
 }
-
-
-export default SelectCategory;
+export default CategoriaGatos;

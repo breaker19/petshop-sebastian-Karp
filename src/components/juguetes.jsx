@@ -3,25 +3,20 @@ import '../App.css';
 import { productoCategoria } from './apis'
 import ItemListContainer from './itemdetailconteiner';
 
-
-
-const SelectCategory = () => {
+const CategoriaJuguetes = () => {
 
   const [products, setProducts] = useState([])
   
-  
+
   useEffect(() => {
- 
     let categoriaElegida = true
    
-    productoCategoria("MLA", "MLA1071").then(lista => {
+    productoCategoria("MLA", "MLA1084").then(lista => {
       if(categoriaElegida) {
         setProducts(lista.results)
       
       }
-      
     })
-   
     return () => categoriaElegida = false;
   }, [])
 
@@ -29,6 +24,4 @@ const SelectCategory = () => {
       <ItemListContainer products={products} />
   );
 }
-
-
-export default SelectCategory;
+export default CategoriaJuguetes;
