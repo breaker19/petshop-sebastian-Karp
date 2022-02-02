@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Card, ListGroup, Col, Container, Row  } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Detalles from './detalles'
+import React from 'react'
 
 
 
@@ -24,7 +25,9 @@ const SingleProducts = ({ product }) => {
             setitemsQty(qty)
         }
     }
-
+    const [showResults, setShowResults] = React.useState(false)
+    const mostrarBoton = () => setShowResults(true)
+  
     
 
     return (
@@ -83,10 +86,18 @@ const SingleProducts = ({ product }) => {
 
                     
             </div> 
+        
             <ListGroup>
-             <a style={{background: "red", height: 30, fontSize: 18, color: "white", textDecoration: "none"}} href={id}  element={<Detalles/>}>Agregar al Carrito</a>
+         
+            
+            <div>
+                
+      <Button  style={{ width: '100%',  background: "red", height: "30", fontSize: "18",color: "white", textDecoration: "none"}} id="Ocultar"  type="submit" value="ver resultados" onClick={mostrarBoton}>Agregar al Carrito </Button>
+      { showResults ? <BotonSeguir /> : null }
+     
+    </div>
             </ListGroup>
-                        
+                       
                       
             </div>
           
@@ -96,4 +107,7 @@ const SingleProducts = ({ product }) => {
         </div> 
       
     )}
+    const BotonSeguir = () => (
+        <Button style={{ width: '100%',  background: "green", height: "30", fontSize: "18",color: "white", textDecoration: "none", marginTop: "30"}} id="Results" href="/gatos">Seguir comprando </Button>
+      ) 
 export default SingleProducts;
