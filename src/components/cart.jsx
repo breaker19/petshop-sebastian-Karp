@@ -26,7 +26,7 @@ const {AddItem} = useContext(contextoCarrito)
             paddingLeft: "4px", 
             paddingRight: "4px", 
             borderRadius: "20%"}}>
-            {AddItem.length}</div>
+            {cards.length}</div>
         </div>
        
     )
