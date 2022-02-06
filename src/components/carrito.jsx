@@ -4,7 +4,7 @@ import {useContext} from 'react'
 
 
 const VistaCarrito = (e) => {
-const {CantidadCarrito} = useContext(contextoCarrito)
+const {CantidadCarrito} = useContext(contextoCarrito) 
 
 e.preventDefault()
 return (

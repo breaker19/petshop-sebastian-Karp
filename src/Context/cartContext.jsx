@@ -15,12 +15,14 @@ export const  CarritoProvider = ({ children }) => { //sigueindo el ejemplo de la
         
     }
 
-    const AddItem = (product) => {
+    const AddItem = (product, qty) => {
+        product.qty = qty
         setCards([...cards, product])
         console.log(cards)           
     }
 
 
+    
 
 
     return (

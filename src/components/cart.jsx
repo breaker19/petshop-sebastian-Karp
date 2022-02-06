@@ -6,11 +6,11 @@ import {useContext} from 'react'
 const CartWidget = () => {
 
 const { cards } = useContext(contextoCarrito)
-
+const {AddItem} = useContext(contextoCarrito)
 
 
     return(
-       < CarritoProvider>
+       
         <div style={{position: "relative", marginLeft: 6}}>
             <Cart4 style={{width:20, height: 20}} />
             <div style={{color: "#fff", 
@@ -26,9 +26,9 @@ const { cards } = useContext(contextoCarrito)
             paddingLeft: "4px", 
             paddingRight: "4px", 
             borderRadius: "20%"}}>
-            {cards.length}</div>
+            {AddItem.length}</div>
         </div>
-        </CarritoProvider>
+       
     )
 }
 

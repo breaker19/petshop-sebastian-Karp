@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import '../App.css';
 import { productoCategoria } from './apis'
 import ItemListContainer from './itemdetailconteiner';
-import NavBar from './NavBar'
 
 
 const SelectCategory = () => {
@@ -22,18 +21,20 @@ const SelectCategory = () => {
       
     })
    
-    return () => categoriaElegida = false;
+    return () => categoriaElegida = true;
   }, [])
   return (
+ 
     <>
     <div className="App">
 
     <ItemListContainer products={products} />
     </div>
     </>
-  )
 
  
+  )
+
 }
 
 
