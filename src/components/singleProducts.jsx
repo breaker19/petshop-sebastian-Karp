@@ -1,20 +1,21 @@
-import { useState } from "react";
-import { Button, Card, ListGroup, Col, Container, Row  } from "react-bootstrap";
+import { useState, useContext } from "react";
+import { Button, ListGroup, Col, Container, Row  } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Detalles from './detalles'
 import React from 'react'
-
+import {contextoCarrito} from '../Context/cartContext'
 
 
 
 
 
 const SingleProducts = ({ product }) => {
-    const {title, description, price, available_quantity,id, pictures, sold_quantity, } = product
+
+const {AddItem} = useContext(contextoCarrito)
+    const {title, description, price, available_quantity,id, pictures, qty, sold_quantity, } = product
 
     const [itemsQty, setitemsQty] = useState(0);
     
-    const setRealStock = (qty) => {
+  const setRealStock = (qty) => {
         if (qty <=  available_quantity) {
             setitemsQty(qty)
         } 
@@ -31,6 +32,7 @@ const SingleProducts = ({ product }) => {
     
 
     return (
+        
         <div  >
             <Container>
            
@@ -92,7 +94,9 @@ const SingleProducts = ({ product }) => {
             
             <div>
                 
-      <Button  style={{ width: '100%',  background: "red", height: "30", fontSize: "18",color: "white", textDecoration: "none"}} id="Ocultar"  type="submit" value="ver resultados" onClick={mostrarBoton}>Agregar al Carrito </Button>
+      <Button  style={{ width: '100%',  background: "red", height: "30", fontSize: "18",color: "white", textDecoration: "none"}} id="Ocultar"  type="submit" value="ver resultados" onClick={()=> AddItem(product)}>Agregar al Carrito </Button>
+
+
       { showResults ? <BotonSeguir /> : null }
      
     </div>
@@ -104,6 +108,7 @@ const SingleProducts = ({ product }) => {
             </Row>
           
             </Container>
+
         </div> 
       
     )}

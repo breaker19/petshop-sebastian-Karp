@@ -2,25 +2,26 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import img from './logo.png';
-import CartWidget from '../components/CartWidget'
-
+import CartWidget from '../components/cart'
+import SingleProducts from './singleProducts'
 
 export const NavBar = () => {
+
   return (
-<Navbar bg="light" expand="lg">
+
+
+<Navbar bg="light" expand="lg" addItem >
   <Container fluid>
 
  <Navbar.Brand href="/">
       <img  src= {img}  width="100%" height="100%"className="d-inline-block align-top"
         alt="Pet Shop"/></Navbar.Brand>
+
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
-      <Nav
+      <Nav 
         className="me-auto my-2 my-lg-0"
         style={{ maxHeight: '100px' }}
         navbarScroll
@@ -31,6 +32,7 @@ export const NavBar = () => {
         <NavDropdown title="Productos" id="navbarScrollingDropdown">
           <NavDropdown.Item href="/Gatos">Gatos</NavDropdown.Item>
           <NavDropdown.Item href="/Perros">Perros</NavDropdown.Item>
+          <SingleProducts/>
 
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
@@ -40,21 +42,17 @@ Solo estaba mirando
 
       </Nav>
       <div style={{ paddingRight: '20px' }}>  
-      <CartWidget/>
+
+      <Nav.Link href="/carrito"><CartWidget /></Nav.Link>
       </div>
-      <Form className="d-flex">
-        <FormControl
-          type="search"
-          placeholder="Buscar"
-          className="me-2"
-          aria-label="Search"
-        />
-        <Button variant="outline-success">Buscar</Button>
-      </Form>
+  
 
     </Navbar.Collapse>
   </Container>
 </Navbar>
+
+
   )
+  
 }
 export default NavBar;
