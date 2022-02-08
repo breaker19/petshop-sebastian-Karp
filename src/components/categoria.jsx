@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../App.css';
-import { productoCategoria } from './apis'
+import { ProductoCategoria } from './apis'
 import ItemListContainer from './itemdetailconteiner';
 
 
@@ -13,7 +13,7 @@ const SelectCategory = () => {
  
     let categoriaElegida = true
    
-    productoCategoria("MLA", "MLA1071").then(lista => {
+    ProductoCategoria("MLA", "MLA1071").then(lista => {
       if(categoriaElegida) {
         setProducts(lista.results)
       

@@ -3,18 +3,19 @@ import { Button, Card, ListGroup } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom'
 
-export const productoCategoria = (site, category) => {
+export const ProductoCategoria = (site, category) => {
     return fetch(`https://api.mercadolibre.com/sites/${site}/search?category=${category}`)
         .then(data => data.json())
 }
 
 
 
-const productos = ({ product }) => {
+const ProductosHome = ({ product }) => {
     const {title, thumbnail, price, permalink, sold_quantity, available_quantity} = product
  
 
     return (
+   
         <div  >
             <div className="col-md-12">
                 <div style={{color: "black", weight: "bold", fontSize: 18,height: 80}}>
@@ -45,4 +46,4 @@ const productos = ({ product }) => {
         </div> 
       
     )}
-export default productos;
+export default ProductosHome;

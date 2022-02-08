@@ -1,11 +1,19 @@
 import {  useParams } from 'react-router-dom'
 import { getProductDetail, getProductDescription } from "./apis";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Productos from './ItemDetails'
 import SingleProducts from './singleProducts'
+import {ContextoCarrito, cartprovider} from '../Context/cartContext'
+import { useNavigate } from "react-router-dom";
+
+
 
 const Detalles=()=>{
-    const {id}=useParams();
+    const navigate = useNavigate();
+const{ value} = useContext(ContextoCarrito);
+
+
+    const {id, product, qty}=useParams();
     const [descripcion, setDescripcion] = useState(null);
     useEffect(() => {
      
@@ -18,6 +26,25 @@ const Detalles=()=>{
 
         })
     }, [id]);
+
+    const verCarrito =(description, price, title, itemsQty) => {
+        const   newObj = {
+           description: description,
+           title : title,
+           price : price,
+           itemsQty : itemsQty,
+           total : (function() {
+               return product.price *qty
+           })
+   
+           };
+           value.addItem(newObj);
+          navigate("/carrito")
+       }
+   
+
+
+
 
 return (
   <>

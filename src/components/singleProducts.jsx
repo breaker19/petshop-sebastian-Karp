@@ -2,15 +2,16 @@ import { useState, useContext } from "react";
 import { Button, ListGroup, Col, Container, Row  } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
-import {contextoCarrito} from '../Context/cartContext'
-
-
+import {ContextoCarrito, cartprovider} from '../Context/cartContext'
+import { useNavigate } from "react-router-dom";
+ 
 
 
 
 const SingleProducts = ({ product }) => {
+    const navigate = useNavigate();
+const{ value, AddItem} = useContext(ContextoCarrito);
 
-const {AddItem} = useContext(contextoCarrito)
     const {title, description, price, available_quantity,id, pictures, qty, sold_quantity, } = product
 
     const [itemsQty, setitemsQty] = useState(0);
@@ -25,10 +26,25 @@ const {AddItem} = useContext(contextoCarrito)
         if (qty >= 0) {
             setitemsQty(qty)
         }
-    }
+    };
+   
     const [showResults, setShowResults] = React.useState(false)
     const mostrarBoton = () => setShowResults(true)
-  
+
+    const VerCarrito =() => {
+     const   newObj = {
+        description: description,
+        title : title,
+        price : price,
+        itemsQty : itemsQty,
+        total : (function() {
+            return price * qty;
+        })(),
+        };
+        value.AddItem(newObj);
+       navigate("/carrito")
+    }
+
     
 
     return (
@@ -88,14 +104,21 @@ const {AddItem} = useContext(contextoCarrito)
 
                     
             </div> 
-        
+            
             <ListGroup>
-         
+            
             
             <div>
-                
-      <Button  style={{ width: '100%',  background: "red", height: "30", fontSize: "18",color: "white", textDecoration: "none"}} id="Ocultar"  type="submit" value="ver resultados" onClick={()=> AddItem(product)}>Agregar al Carrito </Button>
+           
+      <button  style={{ width: '100%',  background: "red", height: "30", fontSize: "18",color: "white", textDecoration: "none"}} id="Ocultar"  type="submit" value="ver resultados" onClick={()=>  {AddItem(product)}}>Agregar al Carrito </button>
+    
 
+
+
+
+
+
+            
 
       { showResults ? <BotonSeguir /> : null }
      

@@ -1,34 +1,44 @@
-import {useState, createContext} from 'react'
+import {useState, createContext, useEffect} from 'react';
 
 
-export const contextoCarrito= createContext(); //esto es el contexto
 
-export const  CarritoProvider = ({ children }) => { //sigueindo el ejemplo de la clase acá tenemos el provider
-    const [cards, setCards] = useState([]) //se inicia el estado del provider
+export const ContextoCarrito= createContext({}); //esto es el contexto
 
+export const  CartProvider  = ({ children }) => { //sigueindo el ejemplo de la clase acá tenemos el provider
  
+    const [Cards, setCards] = useState([]) //se inicia el estado del provider
+const [isEmpty, setIsEmpty] = useState(true) //
+   
     const CantidadCarrito = () => {
-        return cards.length
+        if(Cards.length > 0) {
+            setIsEmpty(false);
+        } else {
+            setIsEmpty(true);
+        }
+        return Cards.length;  
+    };
 
+    const AddItem = (product) => {
 
-
-        
+        setCards(Cards=>[...Cards, product])
+        console.log(Cards)           
     }
 
-    const AddItem = (product, qty) => {
-        product.qty = qty
-        setCards([...cards, product])
-        console.log(cards)           
-    }
 
 
-    
-
-
-    return (
-        <contextoCarrito.Provider value={{cards, CantidadCarrito, AddItem}}>
+      return (
+        <ContextoCarrito.Provider 
+        value={{ 
+            Cards, 
+        isEmpty, 
+        setIsEmpty, 
+        CantidadCarrito, 
+        AddItem,}}
+        >
             {children}
-        </contextoCarrito.Provider>
-    )
-}
+        </ContextoCarrito.Provider>
+    );
+    
+    
+};
 
